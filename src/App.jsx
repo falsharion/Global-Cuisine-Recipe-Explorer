@@ -1,12 +1,18 @@
+import React from 'react'
+import './index.css';
+import Banner from "./component/home-component/Banner"
+import Header from "./component/home-component/Header"
+import Recipies from "./component/home-component/Recipie"
 
-
-function App() {
-
+const App = () => {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">heyyy</h1>
-    </>
-  );
+    <div>
+     <Header />
+     <Banner />
+     <Recipies />
+    </div>
+  )
 }
 
-export default App;
+export default App
+
