@@ -1,5 +1,5 @@
 import React from "react";
-import Typewriter from "typewriter-effect"; // Install this package using: npm install typewriter-effect
+import Typewriter from "typewriter-effect"; 
 import foodIcon from "../../assets/foodd.png";
 
 const Banner = () => {
@@ -21,7 +21,7 @@ const Banner = () => {
         ></div>
       </div>
 
-      {/* Text Content */}
+    
       <div className="flex flex-col items-start justify-center text-left ml-6">
         <h2 className="text-xl font-bold">
           Find your food recipe{""}
@@ -38,7 +38,6 @@ const Banner = () => {
         </h2>
       </div>
 
-      {/* Food Icon */}
       <div className="flex-shrink-0 mr-4">
         <img src={foodIcon} alt="Food Icon" className="w-24 h-24" />
       </div>

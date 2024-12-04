@@ -8,9 +8,9 @@ const ProtectedRoute = ({ children }) => {
   const { currentUser, loading } = useAuth();
   const location = useLocation();
 
-  // If authentication is still loading, show nothing or a loading spinner
+  // If authentication is still loading, show loading page
   if (loading) {
-    return <Loadingpage /> // Or a more sophisticated loading component
+    return <Loadingpage /> 
   }
 
   // If no user is authenticated, redirect to auth page

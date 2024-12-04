@@ -7,7 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { app } from "./firebase"; // Assuming firebase app is exported here
+import { app } from "./firebase"; 
 
 
 const db = getFirestore(app);
@@ -26,7 +26,7 @@ export const signup = async (email, password, username) => {
     createdAt: new Date().toISOString(),
   });
 
-  return user; // Return the user object to update the state in UI
+  return user; 
 };
 // Log in function
 export const login = async (email, password) => {

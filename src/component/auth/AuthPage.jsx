@@ -10,7 +10,7 @@ const AuthPage = () => {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
 
-  // State to manage redirect message and data
+
   const [redirectMessage, setRedirectMessage] = useState("");
   const [redirectData, setRedirectData] = useState(null);
 
@@ -61,14 +61,12 @@ const AuthPage = () => {
         <div className="flex flex-col">
           {isLogin ? <Login /> : <Signup />}
 
-          {/* Divider */}
           <div className="flex items-center my-4">
             <div className="flex-grow border-t border-gray-300"></div>
             <span className="px-4 text-gray-500">or</span>
             <div className="flex-grow border-t border-gray-300"></div>
           </div>
 
-          {/* Toggle Button */}
           <button onClick={toggleAuth} className="z-40 w-full">
             {isLogin ? (
               <div className="rounded-full bg-[#f5efff] border border-violet-950 text-violet-950 py-3 w-full">

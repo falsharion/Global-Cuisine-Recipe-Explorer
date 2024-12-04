@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { RiHome4Line, RiHome5Fill } from 'react-icons/ri';
 import { IoReader, IoReaderOutline } from "react-icons/io5";
 import { AiFillPieChart, AiOutlinePieChart } from "react-icons/ai";
-// import { FaRegUser, FaUserAlt } from "react-icons/fa";
+
 
 const NavItem = ({ to, label, ActiveIcon, InactiveIcon }) => (
   <NavLink 
@@ -44,12 +44,6 @@ const Navbar = () => {
           ActiveIcon={IoReader} 
           InactiveIcon={IoReaderOutline} 
         />
-        {/* <NavItem 
-          to="/profile" 
-          label="Profile" 
-          ActiveIcon={FaUserAlt} 
-          InactiveIcon={FaRegUser} 
-        /> */}
       </div>
     </nav>
   );

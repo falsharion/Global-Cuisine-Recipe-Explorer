@@ -1,79 +1,21 @@
-// import React from "react";
-// import { useFavorites } from "../db/FavoritesContext";
-// import { useNavigate } from "react-router-dom";
-// import savedrecipe from "../assets/savedrecipe.png";
-// import FavoriteHeart from "../component/FavoriteHeart";
 
-// const Saved = () => {
-//   const { favorites } = useFavorites();
-//   const navigate = useNavigate();
-//   return (
-//     <div className="p-6 h-full">
-//       <h2 className="text-violet-950 text-lg text-center font-semibold">
-//         Favorite Recipes
-//       </h2>
-//       {favorites.length === 0 ? (
-//         <div className="flex flex-col justify-center items-center h-full">
-//           <p className="text-center text-gray-600">No favorites yet!</p>
-//           <img
-//             src={savedrecipe}
-//             alt="Login Illustration"
-//             className="w-3/4 opacity-10 max-w-xs mb-6"
-//           />
-//         </div>
-//       ) : (
-//         <div className="flex pt-6 flex-col">
-//           {favorites.map((recipe) => (
-//             <div
-//               key={recipe.id}
-//               className="flex bg-white justify-around shadow-md mb-4 rounded-lg p-2 px-4 cursor-pointer"
-//             >
-//               <img
-//                 src={recipe.image}
-//                 alt={recipe.title}
-//                 className="w-1/5 flex justify-center items-center h-14 object-fill rounded-lg"
-//               />
-//               <div className="flex flex-col items-start w-3/4 px-3 ">
-//                 <h3 className="mt-4 text-sm font-semibold text-gray-800">
-//                   {recipe.title}
-//                 </h3>
-//                 <p className="text-sm text-gray-600">
-//                   {recipe.cuisine || "Cuisine not available"}
-//                 </p>
-//                 <button
-//                   onClick={() => navigate(`/statistics`, { state: { recipe } })}
-//                   className="text-sm text-[#8a76db]"
-//                 >
-//                   Read More
-//                 </button>
-//               </div>
-//               <FavoriteHeart recipe={recipe} />
-//             </div>
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default Saved;
 import React, { useState } from "react";
 import { useFavorites } from "../context/FavoritesProvider";
 import { useNavigate } from "react-router-dom";
 import savedrecipe from "../assets/savedrecipe.png";
 import FavoriteHeart from "../component/FavoriteHeart";
-import { FaArrowUp, FaArrowDown } from "react-icons/fa"; // Icons for sorting
+import { FaArrowUp, FaArrowDown } from "react-icons/fa"; 
 
 const Saved = () => {
   const { favorites } = useFavorites();
   const navigate = useNavigate();
-  const [isLifo, setIsLifo] = useState(false); // State to toggle between FIFO and LIFO
+  const [isLifo, setIsLifo] = useState(false); // State to toggle between FIFO and LIFO of recipe list
 
   // Sorted favorites based on the state
   const sortedFavorites = isLifo ? [...favorites].reverse() : favorites;
 
   const toggleSortOrder = () => {
-    setIsLifo((prev) => !prev); // Toggle between FIFO and LIFO
+    setIsLifo((prev) => !prev); // Toggle between FIFO and LIFO of recipe list
   };
 
   return (

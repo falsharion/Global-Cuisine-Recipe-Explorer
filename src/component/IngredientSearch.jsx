@@ -32,8 +32,7 @@ const IngredientSearch = () => {
         id: recipe.id,
         title: recipe.title,
         image: recipe.image,
-        calories: "Calculating...", // You'll need to fetch nutrition separately
-        cuisine: "Mixed" // Since these are ingredient-based searches
+        cuisine: "Mixed" 
       }));
 
       setRecipes(filteredRecipes);
@@ -95,7 +94,6 @@ const IngredientSearch = () => {
             </h3>
             <div className="flex justify-between items-center">
               <p className="text-sm text-[#8a76db]">Read more</p>
-              {/* You might want to add FavoriteHeart here */}
             </div>
           </div>
         ))}
