@@ -6,7 +6,7 @@ import Nostats from "../component/stats-component/Nostats";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../db/firebase";
 import FavoriteHeart from "../component/FavoriteHeart";
-import Loadingpage from "../component/loadingpage";
+import Loadingpage from "../component/Loadingpage";
 
 const Statistics = () => {
   const location = useLocation();

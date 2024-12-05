@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import FavoriteHeart from "../component/FavoriteHeart";
 import Norecipe from "../component/stats-component/Norecipe";
-import Loadingpage from "../component/loadingpage";
+import Loadingpage from "../component/Loadingpage";
 
 const SearchResults = () => {
   const [searchParams] = useSearchParams();
