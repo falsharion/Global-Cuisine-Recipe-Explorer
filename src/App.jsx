@@ -55,7 +55,7 @@ function App() {
   return (
     <>
       {/* Desktop Warning Message */}
-      <div className="hidden md:flex lg:fixed lg:inset-0 lg:bg-gray-100 lg:items-center lg:justify-center lg:z-50">
+      <div className="hidden md:flex md:fixed md:inset-0 md:bg-gray-100 md:items-center md:justify-center md:z-50">
         <div className="bg-white p-8 rounded-lg shadow-xl text-center max-w-md">
           <div className="mb-4">
             <svg 
