@@ -37,9 +37,9 @@ function App() {
 
     // Ensure the ingredients are comma separated
     const formattedQuery = searchQuery
-      .split(/[,\s]+/) // Split by commas or spaces
+      .split(/[,\s]+/) 
       .map((ingredient) => ingredient.trim())
-      .filter(Boolean) // Remove empty strings
+      .filter(Boolean) 
       .join(",");
 
     if (!formattedQuery) {
@@ -54,35 +54,6 @@ function App() {
 
   return (
     <>
-      {/* Desktop Warning Message */}
-      <div className="hidden md:flex md:fixed md:inset-0 md:bg-gray-100 md:items-center md:justify-center md:z-50">
-        <div className="bg-white p-8 rounded-lg shadow-xl text-center max-w-md">
-          <div className="mb-4">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-16 w-16 mx-auto text-yellow-500" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" 
-              />
-            </svg>
-          </div>
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">
-            Mobile View Only
-          </h2>
-          <p className="text-gray-600 mb-6">
-            This application is designed for mobile and tablet devices.
-            Please use a smartphone or tablet to access the full experience.
-          </p>
-        </div>
-      </div>
-
       <Routes>
         <Route element={<Layout />}>
           {/* Home Route */}
@@ -92,12 +63,12 @@ function App() {
               <>
                 <Header />
                 <form onSubmit={handleSearch} className="flex justify-center px-6 mt-4">
-                  <div className="relative w-full max-w-md">
+                  <div className="relative w-full md:max-w-xl lg:max-w-2xl max-w-md">
                     <input
                       type="text"
                       name="searchInput"
                       placeholder="Enter ingredients with comma (e.g flour,sugar)"
-                      className="p-3 pr-12 border h-14 w-full rounded-full focus:outline-none"
+                      className="p-3 pr-12 md:text-2xl border h-14 w-full rounded-full focus:outline-none"
                     />
                     <button
                       type="submit"

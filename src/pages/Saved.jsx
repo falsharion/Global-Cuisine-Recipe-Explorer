@@ -19,9 +19,9 @@ const Saved = () => {
   };
 
   return (
-    <div className="p-6 h-full">
+    <div className="p-6  h-full">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-violet-950 text-lg font-semibold">
+        <h2 className="text-violet-950 text-lg md:text-2xl font-semibold">
           Favorite Recipes
         </h2>
         <div className="flex items-center space-x-2">
@@ -54,20 +54,20 @@ const Saved = () => {
               <img
                 src={recipe.image}
                 alt={recipe.title}
-                className="w-16 h-16 object-cover rounded-lg"
+                className="w-16 h-16 md:w-24 md:h-24 object-cover rounded-lg"
               />
               
               {/* Recipe Details */}
               <div className="flex flex-col items-start flex-1 px-4">
-                <h3 className="text-sm font-semibold text-gray-800">
+                <h3 className="text-sm md:text-2xl font-semibold text-gray-800">
                   {recipe.title}
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm md:text-xl text-gray-600">
                   {recipe.cuisine || "Cuisine not available"}
                 </p>
                 <button
                   onClick={() => navigate(`/statistics`, { state: { recipe } })}
-                  className="text-sm text-[#8a76db] hover:underline mt-1"
+                  className="text-sm md:text-lg text-[#8a76db] hover:underline mt-1"
                 >
                   Read More
                 </button>

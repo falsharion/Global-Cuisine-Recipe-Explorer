@@ -31,7 +31,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex text-xl items-center justify-between p-6 bg-[#f6f3fb] text-black">
+    <header className="flex text-xl md:text-2xl items-center justify-between p-6 bg-[#f6f3fb] text-black">
       <div className="flex items-center">
         <img
           src={recipelogo}
@@ -44,7 +44,7 @@ const Header = () => {
       </div>
       <button
         onClick={handleAuthButtonClick}
-        className="bg-[#8d79dc] text-base hover:bg-violet-950 text-white px-4 py-2 rounded-lg"
+        className="bg-[#8d79dc] md:text-xl text-base hover:bg-violet-950 text-white px-4 py-2 rounded-lg"
       >
         {currentUser ? "Log Out" : "Log In"}
       </button>

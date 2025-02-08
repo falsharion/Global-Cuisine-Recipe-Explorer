@@ -4,8 +4,7 @@ import foodIcon from "../../assets/foodd.png";
 
 const Banner = () => {
   return (
-    <div className="relative mx-6 rounded-2xl text-white mt-6 h-40 flex items-center justify-between overflow-hidden">
-      {/* Background Blurred Circles */}
+    <div className="relative mx-6 rounded-2xl  text-white mt-6 h-40  flex items-center justify-between overflow-hidden">
       <div className="absolute inset-0 -z-10 flex justify-center bg-[#8a76db] items-center">
         <div
           className="absolute w-48 h-48 bg-[#ffbcc8] rounded-full opacity-50 blur-xl"
@@ -23,9 +22,9 @@ const Banner = () => {
 
     
       <div className="flex flex-col items-start justify-center text-left ml-6">
-        <h2 className="text-xl font-bold">
+        <h2 className="text-xl font-bold md:text-3xl font-serif ">
           Find your food recipe{""}
-          <span className="text-[#e8e4fc] inline text-xl font-bold">
+          <span className="text-[#e8e4fc] inline text-xl md:text-4xl font-bold">
             <Typewriter
               options={{
                 strings: ["Easily", "Simply", "Faster"],
@@ -38,8 +37,8 @@ const Banner = () => {
         </h2>
       </div>
 
-      <div className="flex-shrink-0 mr-4">
-        <img src={foodIcon} alt="Food Icon" className="w-24 h-24" />
+      <div className="flex-shrink-0 mr-4 md:mr-7">
+        <img src={foodIcon} alt="Food Icon" className="w-24 md:w-32 h-32 h-24" />
       </div>
     </div>
   );

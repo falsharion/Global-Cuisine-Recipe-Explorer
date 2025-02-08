@@ -72,7 +72,6 @@ const Login = () => {
           style={{ top: "-45rem", right: "90%" }}
         ></div>
       </div>
-
       {/* Welcome Message */}
       <div className="flex relative flex-col z-40 items-center">
         <img
@@ -83,7 +82,7 @@ const Login = () => {
                 <p className="text-sm text-gray-500">Welcome Back !</p>
         <h2 className="text-2xl font-semibold text-violet-950">Log In</h2>
       </div>
-
+      <div>
       {error && <p className="text-red-500 text-center relative z-40 mb-4">{error}</p>}
 
       <form onSubmit={formik.handleSubmit} className="space-y-4 z-40">
@@ -154,6 +153,7 @@ const Login = () => {
           {loading ? <BeatLoader color="#A78BFA" /> : "Log In"}
         </button>
       </form>
+      </div>
     </div>
   );
 };

@@ -117,7 +117,7 @@ const Recipe = () => {
 
   return (
     <div className="p-6">
-      <div className="flex overflow-x-auto space-x-4 pb-4 scrollbar-hide">
+      <div className="flex overflow-x-auto lg:justify-center md:space-x-6 space-x-4 pb-4 scrollbar-hide">
         {["Cajun", "Italian", "Nordic", "Mediterranean", "Korean", "Thai"].map((category) => (
           <button
             key={category}
@@ -126,29 +126,29 @@ const Recipe = () => {
               selectedCategory === category
                 ? "bg-[#8a76db] text-white"
                 : "bg-white text-gray-800"
-            } hover:bg-[#8a76db] hover:text-white transition`}
+            } hover:bg-[#8a76db] md:text-xl  hover:text-white transition`}
           >
             {category.charAt(0).toUpperCase() + category.slice(1)}
           </button>
         ))}
       </div>
 
-      <div className="grid mb-3 grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="grid mb-3 grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3">
         {isLoading && !recipes.length ? (
-          <p className="text-center col-span-full text-gray-600">Loading...</p>
+          <p className="text-center col-span-full md:text-3xl text-gray-600">Loading...</p>
         ) : (
           recipes.map((recipe) => (
-            <div key={recipe.id} className="bg-white shadow-md rounded-lg p-4">
+            <div key={recipe.id} className="bg-white shadow-md rounded-lg md:p-6 p-4">
               <img
                 src={recipe.image}
                 alt={recipe.title}
-                className="w-full h-30 object-cover rounded-lg"
+                className="w-full h-30 md:h-36  lg:h-48 object-cover rounded-lg"
               />
-              <h3 className="mt-4 text-sm font-semibold text-gray-800">{recipe.title}</h3>
+              <h3 className="mt-4 text-sm md:text-xl font-semibold text-gray-800">{recipe.title}</h3>
               <div className="flex justify-between items-center">
                 <p
                   onClick={() => handleRecipeClick(recipe)}
-                  className="text-sm text-[#8a76db] cursor-pointer hover:underline"
+                  className="text-sm lg:text-lg md:text-base text-[#8a76db] cursor-pointer hover:underline"
                 >
                   {currentUser ? "Read more" : "View Details"}
                 </p>
