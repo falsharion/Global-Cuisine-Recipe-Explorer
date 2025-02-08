@@ -101,12 +101,12 @@ const Statistics = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto bg-white overflow-hidden">
+    <div className="max-w-md  md:max-w-6xl mx-auto bg-white overflow-hidden">
       <div className="relative">
         <img
           src={recipe.image}
           alt={recipe.title}
-          className="w-full h-56 object-cover"
+          className="w-full h-56 md:h-72 object-cover"
         />
         <button
           onClick={() => navigate(-1)}
@@ -118,7 +118,7 @@ const Statistics = () => {
             viewBox="0 0 24 24"
             strokeWidth="2"
             stroke="currentColor"
-            className="w-5 h-5 text-gray-600"
+            className="w-5 h-5 md:w-8 md:h-8 text-gray-600"
           >
             <path
               strokeLinecap="round"
@@ -131,33 +131,34 @@ const Statistics = () => {
 
       <div className="p-6">
         <div className="flex justify-between pt-5 items-center">
-          <h2 className="text-lg font-bold text-gray-800">{recipe.title}</h2>
+          <h2 className="text-lg font-bold md:text-2xl text-gray-800">{recipe.title}</h2>
         </div>
         <div className="flex justify-between">
           <p className="text-sm text-gray-500 mt-1">{recipe.calories} cal</p>
           <FavoriteHeart recipe={recipe} />
         </div>
-
+<div className="lg:flex lg:justify-between">
         <div className="mt-6">
-          <h3 className="text-gray-800 font-semibold mb-3">Ingredients</h3>
+          <h3 className="text-gray-800 md:text-lg font-semibold mb-3">Ingredients</h3>
           <ul className="grid grid-cols-2 gap-y-2 list-disc list-inside">
             {ingredients.map((ingredient, index) => (
-              <li key={index} className="text-sm text-gray-600">
+              <li key={index} className="text-sm md:text-md lg:text-lg text-gray-600">
                 {ingredient.name}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="mt-6 mb-8">
+        <div className="mt-6 mb-8 lg:max-w-lg">
           <h3 className="text-gray-800 font-semibold mb-3">Steps</h3>
           <ol className="list-decimal list-inside space-y-2">
             {steps.map((step, index) => (
-              <li key={index} className="text-sm text-gray-600">
+              <li key={index} className="text-sm md:text-md lg:text-lg text-gray-600">
                 {step.step}
               </li>
             ))}
           </ol>
+        </div>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ const Saved = () => {
   };
 
   return (
-    <div className="p-6  h-full">
+    <div className="p-6 h-full">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-violet-950 text-lg md:text-2xl font-semibold">
           Favorite Recipes
