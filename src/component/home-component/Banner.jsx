@@ -1,6 +1,7 @@
 import React from "react";
 import Typewriter from "typewriter-effect"; 
 import foodIcon from "../../assets/foodd.png";
+import cutlery from "../../assets/cutleryy.png"
 
 const Banner = () => {
   return (
@@ -22,9 +23,9 @@ const Banner = () => {
 
     
       <div className="flex flex-col items-start justify-center text-left ml-6">
-        <h2 className="text-xl font-bold md:text-3xl font-serif ">
+        <h2 className="text-xl font-bold md:text-3xl lg:text-5xl font-serif ">
           Find your food recipe{""}
-          <span className="text-[#e8e4fc] inline text-xl md:text-4xl font-bold">
+          <span className="text-[#e8e4fc] inline text-xl md:text-4xl lg:text-5xl lg:tracking-wider font-bold">
             <Typewriter
               options={{
                 strings: ["Easily", "Simply", "Faster"],
@@ -36,10 +37,17 @@ const Banner = () => {
           </span>
         </h2>
       </div>
-
-      <div className="flex-shrink-0 mr-4 md:mr-7">
-        <img src={foodIcon} alt="Food Icon" className="w-24 md:w-32 h-32 h-24" />
-      </div>
+      <div className="flex">
+      <div className="hidden md:block flex-shrink-0  mr-4 md:mr-7">
+  <img 
+    src={cutlery} 
+    alt="Food Icons" 
+    className="w-24 md:w-24   text-white h-32 md:h-28 animate-[spin_3s_linear_infinite]"
+  />
+</div>
+      <div className="flex-shrink-0  mr-4 md:mr-7">
+        <img src={foodIcon} alt="Food Icon" className="w-24 md:w-32 md:h-32 h-24" />
+      </div></div>
     </div>
   );
 };
