@@ -10,15 +10,14 @@ const RecipeAI = ({ recipeInfo, recipeSteps }) => {
   const [activeTab, setActiveTab] = useState('summary');
   const { currentUser } = useAuth();
 
-  // Hugging Face API endpoint
+  
   const API_URL = "https://api-inference.huggingface.co/models/";
-  // Models for different tasks - using text generation models for all tasks for better reliability
+
   const MODELS = {
     summarization: "facebook/bart-large-cnn",
     textGeneration: "gpt2"  // Fallback to a simpler model if BART fails
   };
-  // Your Hugging Face API token should be stored in an environment variable
-  const HF_TOKEN = import.meta.env.VITE_HUGGINGFACE_API_TOKEN || "hf_dummy_token";  // Provide fallback for testing
+  const HF_TOKEN = import.meta.env.VITE_HUGGINGFACE_API_TOKEN 
 
   const summarizeRecipe = async () => {
     if (!recipeSteps || recipeSteps.length === 0) {
@@ -30,7 +29,6 @@ const RecipeAI = ({ recipeInfo, recipeSteps }) => {
     setError('');
     
     try {
-      // Prepare the input text from recipe steps
       const stepsText = recipeSteps.map(step => step.step).join(' ');
       
       // Call Hugging Face API for summarization
@@ -54,7 +52,7 @@ const RecipeAI = ({ recipeInfo, recipeSteps }) => {
       }
 
       const result = await response.json();
-      console.log("Summary API Response:", result); // Debugging
+    //   console.log("Summary API Response:", result); Debugging
       
       // Handle different response formats
       let summaryText;
@@ -118,7 +116,6 @@ const RecipeAI = ({ recipeInfo, recipeSteps }) => {
     setError('');
     
     try {
-      // Prepare input based on recipe title and available information
       let prompt = '';
       
       if (type === 'mealTime') {
@@ -129,8 +126,6 @@ const RecipeAI = ({ recipeInfo, recipeSteps }) => {
         setActiveTab('dietary');
       }
       
-      // Call Hugging Face API for text generation instead of classification
-      // This is more flexible for custom classifications
       const response = await fetch(`${API_URL}facebook/bart-large-cnn`, {
         method: 'POST',
         headers: {
@@ -152,7 +147,7 @@ const RecipeAI = ({ recipeInfo, recipeSteps }) => {
       }
 
       const result = await response.json();
-      console.log("API Response:", result); // Debugging
+      //console.log("API Response:", result); Debugging
       
       // Extract the generated text from the response
       const generatedText = Array.isArray(result) && result.length > 0 && result[0].generated_text 
@@ -210,13 +205,13 @@ const RecipeAI = ({ recipeInfo, recipeSteps }) => {
     
     // Default based on complexity
     if (title.split(' ').length > 3) {
-      return 'Dinner'; // More complex recipes are often dinner
+      return 'Dinner'; 
     }
     
-    return 'Meal'; // Generic fallback
+    return 'Meal'; 
   };
   
-  // Improved function to determine dietary type based on recipe title and AI response
+  //  determine dietary type based on recipe title and AI response
   const determineDietaryType = (aiResponse, title) => {
     // If AI response contains clear indicators, use them
     if (aiResponse.includes('keto')) return 'Keto';
@@ -236,10 +231,10 @@ const RecipeAI = ({ recipeInfo, recipeSteps }) => {
     }
     if (titleLower.includes('gluten-free') || titleLower.includes('gluten free')) return 'Gluten-Free';
     
-    return 'Standard'; // Default
+    return 'Standard'; 
   };
 
-  // Don't render if user is not logged in
+  
   if (!currentUser) {
     return null;
   }
@@ -248,7 +243,7 @@ const RecipeAI = ({ recipeInfo, recipeSteps }) => {
     <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
       <h3 className="text-lg font-semibold text-gray-800 mb-4">Recipe AI Tools</h3>
       
-      <div className="flex text-sm space-x-2 mb-4">
+      <div className="flex text-xs md:text-sm space-x-2 mb-4">
         <button
           onClick={summarizeRecipe}
           className="px-4 py-2 bg-[#8a76db] text-white rounded-lg hover:bg-[#cdc1ff] transition"
@@ -284,8 +279,7 @@ const RecipeAI = ({ recipeInfo, recipeSteps }) => {
           <p>{error}</p>
           {error.includes('API') && (
             <p className="mt-2 text-sm">
-              Note: This feature requires a valid Hugging Face API token. Make sure you've set up the 
-              VITE_HUGGINGFACE_API_TOKEN environment variable correctly.
+              Note: This feature requires a valid token. Make sure you've set up the environment variable correctly.
             </p>
           )}
         </div>
